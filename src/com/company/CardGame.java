@@ -19,10 +19,6 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public void setDeckOfCards(ArrayList<Card> deckOfCards) {
-        this.deckOfCards = deckOfCards;
-    }
-
     public void createDeck() {
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
         String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
@@ -41,5 +37,9 @@ public class CardGame {
 
     public void sortDeckInNumberOrder() {
         getDeckOfCards().sort(Comparator.comparing(Card::getValue));
+    }
+
+    public void shuffleDeck() {
+        Collections.shuffle(getDeckOfCards());
     }
 }
