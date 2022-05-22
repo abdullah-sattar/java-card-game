@@ -38,4 +38,8 @@ public class CardGame {
     public void sortDeckIntoSuits() {
         getDeckOfCards().sort(Comparator.comparing(Card::getSuit));
     }
+
+    public void sortDeckInNumberOrder() {
+        getDeckOfCards().sort(Comparator.comparing(Card::getValue));
+    }
 }

@@ -12,7 +12,7 @@ public class Main {
 //        }
         CardGame game = new CardGame(new ArrayList<>());
         game.createDeck();
-        game.sortDeckIntoSuits();
+        game.sortDeckInNumberOrder();
         System.out.println(game.getDeckOfCards().size());
         for (Card card : game.getDeckOfCards()) {
             System.out.println(card.getSuit() + " " + card.getSymbol() + " " + card.getValue());
