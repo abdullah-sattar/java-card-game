@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
     private ArrayList<Card> deckOfCards = new ArrayList<>();
@@ -27,9 +29,13 @@ public class CardGame {
         String[] suit = {"Heart", "Club", "Diamond", "Spade"};
         for(int i=0; i<suit.length; i++) {
             for (int j = 0; j < symbols.length; j++) {
-                Card card = new Card(suit[i], symbols[j], values[j]);
+                Card card = new Card(symbols[j], suit[i], values[j]);
                 getDeckOfCards().add(card);
             }
         }
+    }
+
+    public void sortDeckIntoSuits() {
+        getDeckOfCards().sort(Comparator.comparing(Card::getSuit));
     }
 }

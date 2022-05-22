@@ -1,7 +1,5 @@
 package com.company;
 
-import java.sql.Array;
-
 public class Card {
     private String suit;
     private String symbol;
