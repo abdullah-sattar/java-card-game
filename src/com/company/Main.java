@@ -16,6 +16,8 @@ public class Main {
 
         Card pickedCard = new Card("","",0);
         Card previousCard = new Card("","",0);
+        snap.startGame();
+
         while(play == 1) {
             String enter = scanner.nextLine();
             if (enter.equals("")) {
@@ -29,20 +31,6 @@ public class Main {
                 }
             }
         }
-
-//        while(play == 1) {
-//            if (enter.equals("")) {
-//                pickedCard = snap.pickCard();
-//                if (pickedCard == previousCard) {
-//                    System.out.println("Winner!");
-//                    play = 0;
-//                } else {
-//                    previousCard = snap.pickCard();
-//                    System.out.println(previousCard);
-//                    snap.removeCard();
-//                }
-//            }
-//        }
     }
 }
 

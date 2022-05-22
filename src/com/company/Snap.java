@@ -4,16 +4,19 @@ import java.util.ArrayList;
 
 public class Snap extends CardGame {
 
-    CardGame snap = new CardGame(new ArrayList<>());
+    CardGame play = new CardGame(new ArrayList<>());
+
+    public void startGame() {
+        play.createDeck();
+        play.shuffleDeck();
+    }
 
     public Card pickCard() {
-        snap.createDeck();
-        snap.shuffleDeck();
-        System.out.println(snap.getDeckOfCards().get(0).getSymbol() + " of " + snap.getDeckOfCards().get(0).getSuit());
-        return snap.getDeckOfCards().get(0);
+        System.out.println(play.getDeckOfCards().get(0).getSymbol() + " of " + play.getDeckOfCards().get(0).getSuit());
+        return play.getDeckOfCards().get(0);
     }
 
     public void removeCard() {
-        snap.getDeckOfCards().remove(0);
+        play.getDeckOfCards().remove(0);
     }
 }
