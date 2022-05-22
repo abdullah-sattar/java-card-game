@@ -21,8 +21,8 @@ public class CardGame {
 
     public void createDeck() {
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-        String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
-        String[] suit = {"Heart", "Club", "Diamond", "Spade"};
+        String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+        String[] suit = {"Hearts", "Clubs", "Diamonds", "Spades"};
         for(int i=0; i<suit.length; i++) {
             for (int j = 0; j < symbols.length; j++) {
                 Card card = new Card(symbols[j], suit[i], values[j]);

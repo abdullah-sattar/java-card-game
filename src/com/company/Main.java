@@ -1,16 +1,49 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        CardGame game = new CardGame(new ArrayList<>());
-        game.createDeck();
-        game.shuffleDeck();
-        System.out.println(game.getDeckOfCards().size());
-        for (Card card : game.getDeckOfCards()) {
-            System.out.println(card.getSuit() + " " + card.getSymbol() + " " + card.getValue());
+
+        Snap snap = new Snap();
+
+        int play = 1;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome! Press enter to pick a card:");
+
+        Card pickedCard = new Card("","",0);
+        Card previousCard = new Card("","",0);
+        while(play == 1) {
+            String enter = scanner.nextLine();
+            if (enter.equals("")) {
+                pickedCard = snap.pickCard();
+                if (pickedCard.getSuit().equals(previousCard.getSuit())) {
+                    System.out.println("Winner!");
+                    play = 0;
+                } else {
+                    previousCard = pickedCard;
+                    snap.removeCard();
+                }
+            }
         }
+
+//        while(play == 1) {
+//            if (enter.equals("")) {
+//                pickedCard = snap.pickCard();
+//                if (pickedCard == previousCard) {
+//                    System.out.println("Winner!");
+//                    play = 0;
+//                } else {
+//                    previousCard = snap.pickCard();
+//                    System.out.println(previousCard);
+//                    snap.removeCard();
+//                }
+//            }
+//        }
     }
 }
+
+
